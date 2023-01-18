@@ -104,24 +104,3 @@ function moveCard(card) {
 
 
 
-
-
-
-
-
-// //document.querySelectorAll(".card").addEventListener("click", moveCard);
-// //Funktion som flyttar kort från available till chosen 
-// function moveCard () {
-//     // //get the element to move
-//     let selectedCard = document.querySelector(".card");
-
-//     // //get the target container
-//     let chosenList = document.querySelector(".chosen");
-
-//     // chosenList.appendChild(selectedCard);
-// }
-
-
-
-
-
