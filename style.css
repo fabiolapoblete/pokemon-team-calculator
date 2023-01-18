@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #1d1d1d;
+    font-family: 'Inter', sans-serif;
+    color: #fcfcfc;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5.6rem;
+}
+
+.main {
+    display: flex;
+    gap: 20.7rem;
+    justify-content: center;
+    margin-top: 7.6rem;
+}
+
+.chosen {
+text-align: center;
+}
+
+.colorBox {
+    width: 4rem;
+    height: 4rem;
+    background-color: green;
+}
+
+.card {
+    display: flex;
+    gap: 2rem;
+    background-color: #fcfcfc;
+    color: #1d1d1d;
+    padding: 0.5rem 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.pokemonSpec {
+    margin-top: auto;
+}
+
+.green {
+    background-color: #75BD92;
+}
+
+.red {
+    background-color: #BD7594; 
+}
+
+.blue {
+    background-color: rgb(44, 113, 218); 
+}
+
+.yellow {
+    background-color: #BDBA75; 
+}
+
+.brown {
+    background-color: #BD9475; 
+}
+
+.purple {
+    background-color: rgb(170, 99, 170); 
+}
