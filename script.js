@@ -43,11 +43,12 @@ const pokemons = [
 },
 ];
 
-//Skapa pokemonkort
-
 let pokemon;
+let cardCp;
+let totalCp = 0;
 createCard(pokemons);
 
+document.querySelector(".total").innerHTML = "Total CP: " + totalCp;
 
 //Funktionen skapar ett pokemonkort
 function createCard (list) {
@@ -57,17 +58,17 @@ function createCard (list) {
        let color = getColor(pokemon.type);
        console.log(color);
 
-        let el = document.createElement("article");
-        el.classList.add("card")
+        let pokemonCard = document.createElement("article");
+        pokemonCard.classList.add("card", pokemon.name);
     
-        el.innerHTML = `
+        pokemonCard.innerHTML = `
         <div class="colorBox ${color}"></div>
         <section class="pokemonSpec">
             <h4>${pokemon.name}</h4>
             <p>${pokemon.cp} CP</p>
         </section>
         `;
-        document.querySelector(".placeholder").appendChild(el);
+        document.querySelector(".placeholder").appendChild(pokemonCard);
     };
 };
 
@@ -88,19 +89,27 @@ function getColor(type) {
     };
 };
 
-//lägger på evenetlistner på alla kort
+//lägger på eventlistner på alla kort
 document.querySelectorAll(".card").forEach((card) => {
     function selectCard() {
         moveCard(card)
     }
     card.addEventListener("click", selectCard);
+    console.log(card);
 });
 
+//Funktion som flyttar kort och uppdaterar total CP
 function moveCard(card) {
-    document.querySelector(".chosen").appendChild(card);
+    cardCp = parseInt(card.querySelector("p").innerText);
+
+    if (document.querySelector(".available").contains(card)) {
+        document.querySelector(".chosen").appendChild(card);
+    } else 
+    {
+        document.querySelector(".available").appendChild(card);
+        cardCp = -cardCp
+    }
+
+    totalCp += cardCp;
+    document.querySelector(".total").innerHTML = "Total CP: " + totalCp;
 };
-
-
-
-
-
